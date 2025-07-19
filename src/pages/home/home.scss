@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.logo-container {
+	div {
+		width: 161px;
+		.logo {
+			font-family: "Montserrat";
+			font-weight: 700;
+			font-size: 24px;
+			text-transform: lowercase;
+			text-align: center;
+			span {
+				text-transform: uppercase;
+			}
+		}
+		
+	}
+}

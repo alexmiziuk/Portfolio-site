@@ -1,0 +1,20 @@
+# node modules
+node_modules/
+
+# сборка
+dist/
+build/
+
+# временные логи
+*.log
+
+# IDE-штуки
+.vscode/
+.idea/
+
+# системные файлы
+.DS_Store
+Thumbs.db
+
+# env-файлы (если используешь переменные)
+.env
