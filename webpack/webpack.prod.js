@@ -13,6 +13,10 @@ module.exports = merge(common, {
         test: /\.(scss|css)$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
+      {
+        test: /\.(png|jpe?g|gif|webp|ico|svg)$/i, // Добавьте svg в список расширений
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [

@@ -3,32 +3,27 @@ const common = require('./webpack.common');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
-	mode: 'development',
-	devtool: 'inline-source-map',
-	devServer: {
-		static: './dist',
-		open: true,
-		hot: true,
-		port: 3000,
-	},
-	module: {
-		rules: [
-			{
-				test: /\.(scss|css)$/,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-			},
-			{
-				test: /\.(png|jpe?g|gif|webp|ico)$/i,
-				type: 'asset/resource',
-			},
-			{
-				test: /\.svg$/,
-				type: 'asset/resource',
-			},
-
-		],
-	},
-	plugins: [
-		new MiniCssExtractPlugin({ filename: 'css/[name].css' }),
-	],
+  mode: 'development',
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+    open: true,
+    hot: true,
+    port: 3000,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(scss|css)$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|webp|ico|svg)$/i, // Добавьте svg в список расширений
+        type: 'asset/resource',
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({ filename: 'css/[name].css' }),
+  ],
 });

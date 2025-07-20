@@ -16,7 +16,13 @@ module.exports = {
     clean: true,
   },
   module: {
-    rules: [ /* html, images, js */ ],
+    rules: [
+      // Добавьте правило для обработки SVG
+      {
+        test: /\.(png|jpe?g|gif|webp|ico|svg)$/i,
+        type: 'asset/resource',
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({ filename: 'index.html', chunks: ['home'], template: './src/pages/home/index.html' }),
