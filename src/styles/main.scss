@@ -1,8 +1,45 @@
-
-
-
-
-body {
-  background: #be3232;
-  color: #58d73e;
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/static/Inter_18pt-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/static/Inter_18pt-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
