@@ -14,7 +14,7 @@ module.exports = merge(common, {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif|webp|ico|svg)$/i, // Добавьте svg в список расширений
+        test: /\.(png|jpe?g|gif|webp|ico|svg)$/i,
         type: 'asset/resource',
       },
     ],

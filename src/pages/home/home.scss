@@ -82,6 +82,58 @@
 	}
 }
 
+.promo {
+	background-image: url(../../assets/images/promofoto.jpg);
+	background-size: cover;
+	background-position: 50% 10%;
+	background-repeat: no-repeat;
+	height: 100vh;
+	padding: 114px 0 70px 0;
+	box-sizing: border-box;
+	&__wrapper {
+		max-width: 584px;
+		text-align: left;
+		color: #fff;
+	}
+	&__title {
+		font-family: "Montserrat", sans-serif;
+		font-weight: 700;
+		font-size: 43px;
+		line-height: 55px;
+		
+	}
+	&__subtitle {
+		font-family: "Inter", sans-serif;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 32px;
+		
+	}
+	&__btn-choose,
+	&__btn-portfolio {
+		background-color: #007bff;
+		color: #fff;
+		border: none;
+		border-radius: 8px;
+		padding: 12px 24px;
+		font-family: "Montserrat", sans-serif;
+		font-weight: 500;
+		font-size: 16px;
+		cursor: pointer;
+		text-decoration: none;
+		margin-top: 20px;
+		display: inline-block;
+		transition: background-color 0.3s ease;
+
+		&:hover {
+			background-color: #0056b3;
+		}
+	}
+	&__btn-portfolio {
+		margin-left: 10px;
+	}
+}
+
 .skills-section {
 	h2 {
 		text-align: center;

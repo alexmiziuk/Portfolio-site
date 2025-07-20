@@ -17,7 +17,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // Добавьте правило для обработки SVG
       {
         test: /\.(png|jpe?g|gif|webp|ico|svg)$/i,
         type: 'asset/resource',
