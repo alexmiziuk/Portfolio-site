@@ -11,19 +11,37 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(scss|css)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(png|jpe?g|gif|webp|ico|svg)$/i,
-        type: 'asset/resource',
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ],
       },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash].css',
+      chunkFilename: 'css/[id].[contenthash].css'
+    }),
   ],
   optimization: {
-    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
-    splitChunks: { chunks: 'all' },
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin({
+        extractComments: false,
+      })
+    ],
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/](jquery|slick-carousel)[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
   },
 });

@@ -15,15 +15,19 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(scss|css)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(png|jpe?g|gif|webp|ico|svg)$/i,
-        type: 'asset/resource',
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ],
       },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'css/[name].css' }),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].css',
+      chunkFilename: 'css/[id].css'
+    }),
   ],
 });
