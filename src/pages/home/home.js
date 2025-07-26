@@ -8,8 +8,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel';
 
 
-
-
 function addMailIcon() {
 	const mailIconElement = document.createElement('img');
 	mailIconElement.src = mailIcon;
@@ -25,30 +23,37 @@ function addMailIcon() {
 document.addEventListener('DOMContentLoaded', () => {
 	addMailIcon();
 	$(document).ready(function () {
-  $('.slick-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          arrows: true
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          arrows: false
-        }
-      }
-    ]
-  });
-});
+		$('.slick-slider').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: true,
+			dots: true,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			responsive: [
+				{
+					breakpoint: 1920,
+					settings: {
+						slidesToShow: 6.3,
+						arrows: true
+					}
+				},
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 2,
+						arrows: true
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1,
+						arrows: false
+					}
+				}
+			]
+		});
+	});
 
 });
