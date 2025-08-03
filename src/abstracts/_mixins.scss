@@ -1,3 +1,4 @@
+@use "./variables" as *;
 @mixin h2-desktop() {
 	font-size: 36px;
 	font-weight: 700;
@@ -6,6 +7,7 @@
 	text-align: center;
 	margin: 20px auto 40px auto;
 	color: #2c3e50;
+	text-transform: capitalize;
 }
 
 @mixin h3-desktop() {
@@ -16,6 +18,7 @@
 	/* text-align: center; */
 	margin: 20px auto 20px auto;
 	color: #3a3a3a;
+	text-transform: capitalize;
 }
 
 @mixin text-desktop() {
@@ -24,6 +27,24 @@
 	font-size: 16px;
 	line-height: 1.8;
 	color: #555;
-	/* text-align: center; */
-	/* max-width: 800px; */
+}
+
+@mixin btn-desktop($white-color: $white-color) {
+	background-color: #007bff;
+	color: $white-color;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 24px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	cursor: pointer;
+	text-decoration: none;
+	margin-top: 20px;
+	display: inline-block;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: #0056b3;
+	}
 }

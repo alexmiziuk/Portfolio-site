@@ -14,14 +14,38 @@
 			<div class="header__inner">
 				<div class="logo">
 					<div>
-						<h1 class="logo__h1"><span>O</span>leksandr <span>M</span>iziuk</h1>
+						<h2 class="logo__name"><span>O</span>leksandr <span>M</span>iziuk</h2>
 					</div>
 					<span class="logo__line"></span>
 					<p class="logo__subtitle">frontend developer</p>
 				</div>
 				<nav class="nav">
 					<ul class="nav__list">
-						<li><a class="nav__link" href="/home">Home</a></li>
+						<li>
+							<div class="nav__link nav__link--dropdown" id="main">Home
+								<div class="submenu__main">
+									<div class="submenu__wrapper-main">
+										<div>
+											<a class="submenu__item" href="#moje-spretnosti">Main</a>
+										</div>
+										<div>
+											<a class="submenu__item" href="#mnenja">About Me</a>
+										</div>
+										<div>
+											<a class="submenu__item" href="#proces-dela">My Skills</a>
+										</div>
+										<div>
+											<a class="submenu__item" href="#proces-dela">What I Do Best</a>
+										</div>
+										<div>
+											<a class="submenu__item" href="#proces-dela">Why Choose Me?</a>
+										</div><div>
+											<a class="submenu__item" href="#proces-dela">Contacts</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a class="nav__link" href="/cv">CV</a></li>
 						<li><a class="nav__link" href="/portfolio">Portfolio</a></li>
 					</ul>
@@ -48,16 +72,16 @@
 					<a class="promo__btn-portfolio" href="#portfolio" class="btn">Portfolio</a>
 				</div>
 			</div>
-
 		</section>
 		<section class="about">
 			<div class="container">
 				<div class="about__wrapper">
 					<div class="about__l-container">
-						<img src="./assets/expiriance_doublebass.jpg" alt="Man plays doubleBass" class="about__doublebass">
+						<img src="./assets/images/expiriance_doublebass.jpg" alt="Man plays doubleBass"
+							class="about__doublebass">
 					</div>
 					<div class="about__r-container">
-						<h2 class="about__title">About me</h2>
+						<h2 class="about__title">About Me</h2>
 						<p class="about__text">
 							My journey into the digital world began with music.
 							I graduated from a music academy and worked as a professional musician in chamber and symphonic
@@ -72,7 +96,7 @@
 							field.
 						</p>
 						<p class="about__text">
-							<img src="./assets/about__web-dev.png" alt="" class="about__web-dev">
+							<img src="./assets/images/about__web-dev.png" alt="" class="about__web-dev">
 							Today, I don't just write code — I craft digital interfaces that speak for themselves.
 							My goal is to merge visual aesthetics, technical excellence, and user comfort in every project I
 							create.
@@ -84,7 +108,7 @@
 
 		<section class="skills">
 			<span class="section-divider"></span>
-			<h2 class="skills__title">My skills</h2>
+			<h2 class="skills__title">My Skills</h2>
 			<div class="slick-slider">
 				<div class="slick-slider__card">
 					<div class="slick-slider__card-body">
@@ -342,7 +366,8 @@
 						</div>
 					</div>
 					<div class="why-me__r-container">
-						<img class="why-me__image" src="./assets/why_me.png" alt="Why choose me image" class="why-me__image">
+						<img class="why-me__image" src="./assets/images/why_me.png" alt="Why choose me image"
+							class="why-me__image">
 					</div>
 				</div>
 			</div>
@@ -352,32 +377,96 @@
 
 	<footer class="contact">
 		<div class="container">
-			<h2 class="contact__title">Let’s Connect</h2>
-			<p class="contact__subtitle">Whether you’ve got a freelance task, team project, or just a question — I’m here
-				and happy to chat.</p>
-			<div class="contact__links">
-				<a href="mailto:oleksandr.miziyk@gmail.com" class="contact-button" target="_blank">
-					Email
-				</a>
-				<a href="https://github.com/alexmiziuk" class="contact-button" target="_blank"> GitHub </a>
-				<a href="https://www.linkedin.com/in/oleksandr-miziuk" class="contact-button" target="_blank"> LinkedIn </a>
-				<a href="https://t.me/OleksandrMiziyk" class="contact-button" target="_blank"> Telegram </a>
-				<a href="https://wa.me/380663790585" class="contact-button" target="_blank"> WhatsApp </a>
+			<div class="contact__wrapper">
+				<div class="contact__l-containtr">
+					<h2 class="contact__title">Let’s Connect</h2>
+					<p class="contact__subtitle">Whether you’ve got a freelance task, team project, or just a question — I’m
+						here
+						and happy to chat.</p>
+					<div class="contact__links">
+						<a href="https://github.com/alexmiziuk" class="contact__links-btn" target="_blank">
+							<image src="./assets/images/icons/github.svg"
+								class="contact__links-icon contact__links-icon--github"></image>
+						</a>
+						<a href="https://www.linkedin.com/in/oleksandr-miziuk" class="contact__links-btn" target="_blank">
+							<image src="./assets/images/icons/linkedin.svg" class="contact__links-icon"></image>
+						</a>
+						<a href="https://t.me/OleksandrMiziyk" class="contact__links-btn" target="_blank">
+							<image src="./assets/images/icons/telegram.svg" class="contact__links-icon"></image>
+						</a>
+						<a href="https://wa.me/380663790585" class="contact__links-btn" target="_blank">
+							<image src="./assets/images/icons/whatsapp.svg" class="contact__links-icon"></image>
+						</a>
+						<a href="https://wa.me/380663790585" class="contact__links-btn" target="_blank">
+							<image src="./assets/images/icons/viber.svg" class="contact__links-icon"></image>
+						</a>
+					</div>
+					<a class="contact__mail-link" href="mailto:oleksandr.miziyk@gmail.com">oleksandr.miziyk@gmail.com</a>
+				</div>
+				<div class="contact__r-container">
+					<p class="contact__form-title">Contact me</p>
+					<form action="#" class="contact__form" id="contactForm" method="post">
+						<div class="contact__wrapper-name-surname">
+							<div class="contact__wrapper-name">
+								<label for="name">Name</label>
+								<input type="text" maxlength="50" id="name" class="contact__name" placeholder="Matej">
+								<div class="error error-name hide">First name is required</div>
+							</div>
+							<div class="contact__wrapper-surname">
+								<label for="surname">Surname</label>
+								<input type="text" maxlength="50" id="surname" class="contact__surname" placeholder="Novak">
+								<div class="error error-surname hide">Last name is required</div>
+							</div>
+						</div>
+						<div class="contact__wrapper-email-telephone">
+							<div class="contact__wrapper-email">
+								<label for="email">Email</label>
+								<input type="email" maxlength="254" id="email" class="contact__email"
+									placeholder="novak@gmail.com">
+								<div class="error error-mail hide">Email address is required</div>
+							</div>
+							<div class="contact__wrapper-telephone">
+								<label for="telephone">Phone number</label>
+								<input type="tel" maxlength="20" id="telephone" class="contact__telephone"
+									placeholder="+ 38XXXXXXXX">
+								<div class="error error-telephone hide">Phone number is required</div>
+							</div>
+						</div>
+						<div class="contact__wrapper-message">
+							<label for="message">Message</label>
+							<textarea style="resize: none;" maxlength="500" id="message" class="contact__message"></textarea>
+							<div class="error error-message hide">Message is required</div>
+						</div>
+						<div class="contact__wrapper-privet-button">
+							<div class="contact__private">
+								<input type="checkbox" id="checkbox" class="contact__checkbox">
+								<label for="checkbox" class="contact__checkbox-text">
+									By submitting, you agree <br> to the
+									<a href="./privacy/privacy.html">Terms</a> in
+									<a href="./privacy/privacy.html">and Privacy Policy</a>
+									<span class="error error-checkbox hide">The checkbox is required</span>
+								</label>
+							</div>
+							<button type="submit" formnovalidate class="contact__button">Send me
+								<span class="dbl-spinner-wrapper">
+									<span class="dbl-spinner"></span>
+									<span class="dbl-spinner dbl-spinner--2"></span>
+								</span>
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>
-			<form class="contact-form">
-				<label for="name">Your Name*</label>
-				<input type="text" id="name" name="name" required />
-
-				<label for="email">Your Email*</label>
-				<input type="email" id="email" name="email" required />
-
-				<label for="message">Message*</label>
-				<textarea id="message" name="message" rows="5" required></textarea>
-
-				<button type="submit">Send Message</button>
-			</form>
+		</div>
+		<div class="modal-result" id="modalResult">
+			<button class="modal-result__btn-close" id="modalCloseBtn">
+				<img src="../../assets/images/icons/cross-button.png" alt="cross button" class="modal-result__icon-close">
+			</button>
+			<div class="modal-result__container">
+			</div>
 		</div>
 	</footer>
+	
 </body>
 
 </html>

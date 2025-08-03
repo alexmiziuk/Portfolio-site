@@ -2,11 +2,13 @@ import 'normalize.css';
 import '../../styles/main.scss';
 import './home.scss';
 import mailIcon from '../../assets/images/icons/mail.svg';
+import { navMenu } from '../../modules/navMenu';
 import $ from 'jquery';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel';
-
+import { validateForm } from '../../modules/validateForm';
+import { sendMail } from '../../modules/sendMail';
 
 function addMailIcon() {
 	const mailIconElement = document.createElement('img');
@@ -22,11 +24,12 @@ function addMailIcon() {
 
 document.addEventListener('DOMContentLoaded', () => {
 	addMailIcon();
-	$(document).ready(function () {
+	navMenu();
+	
 		$('.slick-slider').slick({
-			slidesToShow: 1,
+			slidesToShow: 7,
 			slidesToScroll: 1,
-			arrows: true,
+			arrows: true, 
 			dots: true,
 			autoplay: true,
 			autoplaySpeed: 3000,
@@ -35,25 +38,30 @@ document.addEventListener('DOMContentLoaded', () => {
 					breakpoint: 1920,
 					settings: {
 						slidesToShow: 6.3,
-						arrows: true
+						dots: true
+
 					}
 				},
 				{
 					breakpoint: 1024,
 					settings: {
 						slidesToShow: 2,
-						arrows: true
+						dots: true
 					}
 				},
 				{
 					breakpoint: 768,
 					settings: {
 						slidesToShow: 1,
+						dots: true,
 						arrows: false
 					}
 				}
 			]
 		});
-	});
+	
+
+	validateForm();
+	sendMail();
 
 });
