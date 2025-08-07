@@ -43,18 +43,26 @@ document.addEventListener('DOMContentLoaded', () => {
 					}
 				},
 				{
-					breakpoint: 1024,
+					breakpoint: 1201,
 					settings: {
-						slidesToShow: 2,
+						slidesToShow: 5.3,
 						dots: true
 					}
 				},
 				{
-					breakpoint: 768,
+					breakpoint: 1025,
 					settings: {
-						slidesToShow: 1,
+						slidesToShow: 4.3,
 						dots: true,
-						arrows: false
+						
+					}
+				},
+				{
+					breakpoint: 769,
+					settings: {
+						slidesToShow: 3.3,
+						dots: true,
+						
 					}
 				}
 			]
