@@ -802,6 +802,124 @@ textarea.placeholder-hidden::placeholder {
 	}
 }
 
+.burger {
+	position: absolute;
+	display: none;
+	top: 25px;
+	right: 20px;
+	cursor: pointer;
+	z-index: 10000;
+	&__line {
+		display: block;
+		width: 25px;
+		height: 3px;
+		margin: 5px auto;
+		background-color: #625e5e;
+		transition: all 0.3s ease-in-out;
+	}
+	&.active-burger {
+		.burger__line {
+			&:nth-child(2) {
+				opacity: 0;
+			}
+			&:nth-child(1) {
+				transform: translateY(8px) rotate(45deg);
+			}
+			&:nth-child(3) {
+				transform: translateY(-8px) rotate(-45deg);
+			}
+		}
+	}
+}
+.burger:hover .burger__line {
+	background-color: black;
+}
+
+.burger-layer {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 99;
+	transition: left 0.3s ease-in-out;
+	&.burger-layer-active {
+		left: 0;
+	}
+}
+.burger-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 500px;
+	height: 100%;
+	background-color: #b9b7b7;
+	z-index: 100;
+	overflow-y: auto;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 280px;
+		height: 100%;
+	}
+	&__item {
+		display: inline-block;
+		max-width: 186px;
+		margin: 15px 20px 12px 15px;
+		font-family: "InriaSans-Regular", sans-serif;
+		font-size: 18px;
+		letter-spacing: 0.5px;
+		cursor: pointer;
+		text-decoration: none;
+		color: #524f4e;
+		transition: all 0.3s ease-in-out;
+	}
+	&__sub-container {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		max-width: fit-content;
+	}
+	&__item-link {
+		display: block;
+		padding: 2px 20px;
+		color: #524f4e;
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.2s;
+		font-size: 14px;
+		font-family: "Montserrat", sans-serif;
+		&:hover {
+			color: white;
+		}
+		&.burger-menu__item-link--active {
+			color: white;
+		}
+	}
+	&__sub-item {
+		padding: 12px 32px;
+	}
+	&__sub-item-link {
+		font-size: 12px;
+		color: #524f4e;
+		text-decoration: none;
+		display: block;
+		font-weight: 400;
+		transition: color 0.2s;
+		font-size: 12px;
+		font-family: "Montserrat", sans-serif;
+		&:hover {
+			color: white;
+		}
+		&.burger-menu__sub-item-link--active {
+			color: white;
+		}
+	}
+}
+
 @media screen and (max-width: 1200px) {
 	.promo {
 		height: auto;
@@ -813,10 +931,9 @@ textarea.placeholder-hidden::placeholder {
 	}
 	.contact {
 		&__subtitle {
-			/* @include h3-tablet(); */
 			max-width: 700px;
 		}
-		&__checkbox-text{
+		&__checkbox-text {
 			font-size: 14px;
 		}
 		&__private {
@@ -929,7 +1046,6 @@ textarea.placeholder-hidden::placeholder {
 		}
 
 		&__button {
-			/* @include btn-tablet(); */
 			margin-top: 20px;
 			margin-left: auto;
 			margin-right: auto;
@@ -939,6 +1055,15 @@ textarea.placeholder-hidden::placeholder {
 }
 
 @media screen and (max-width: 768px) {
+	.nav {
+		display: none;
+	}
+	.burger {
+		display: block;
+	}
+	.mail {
+		display: none;
+	}
 	.promo {
 		&__title {
 			font-size: 34px;
@@ -1040,7 +1165,6 @@ textarea.placeholder-hidden::placeholder {
 			display: block;
 			margin: 20px auto;
 			width: 200px;
-			
 		}
 		&__text {
 			@include text-mobile();
@@ -1057,6 +1181,80 @@ textarea.placeholder-hidden::placeholder {
 		}
 		&__r-container {
 			padding-left: 0;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.burger {
+		top: 20px;
+		&-menu {
+			width: 100%;
+		}
+		&__item {
+			margin: 12px 20px 12px 40px;
+		}
+
+	}
+}
+
+
+@media (max-width: 503px) {
+	.burger-layer {
+		left: -130%;
+	}
+}
+
+@media (max-width: 480px) {
+	.burger-menu {
+		&__container {
+			padding: 0;
+		}
+	}
+}
+
+@media (max-width: 423px) {
+	.burger-menu {
+		&__container {
+			padding: 0;
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.burger-menu {
+		&__item {
+			margin: 10px 20px 10px 40px;
+		}
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 890px) {
+	.burger-menu {
+		&__item {
+			margin: 12px 20px 12px 40px;
+			font-size: 16px;
+		}
+		&__container {
+			height: 210%;
+		}
+		&__item:first-child {
+			margin-top: 190px !important;
+		}
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 569px) {
+	.burger-menu {
+		&__item {
+			margin: 10px 20px 10px 40px;
+			font-size: 14px;
+		}
+		&__container {
+			height: 100%;
+		}
+		&__item:first-child {
+			margin-top: 200px !important;
 		}
 	}
 }

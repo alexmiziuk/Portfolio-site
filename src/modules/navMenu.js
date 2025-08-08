@@ -1,16 +1,16 @@
 // Dropdown menu
 const homeMenuItem = document.getElementById("main");
-const submenuWrapperExpertise = document.querySelector(".submenu__main");
+const submenuWrapper = document.querySelector(".submenu__main");
 const subMenuItems = document.querySelectorAll(".submenu__item");
 const body = document.querySelector("body");
 
 export function navMenu() {
     function hiddenElement() {
-        submenuWrapperExpertise.style.display = 'none';
-        submenuWrapperExpertise.style.visibility = 'hidden';
-        submenuWrapperExpertise.style.zIndex = '-1';
-        submenuWrapperExpertise.style.opacity = '0';
-        submenuWrapperExpertise.style.transition = 'all 0.3s ease';
+        submenuWrapper.style.display = 'none';
+        submenuWrapper.style.visibility = 'hidden';
+        submenuWrapper.style.zIndex = '-1';
+        submenuWrapper.style.opacity = '0';
+        submenuWrapper.style.transition = 'all 0.3s ease';
         homeMenuItem.classList.remove('active');
     }
 
@@ -44,9 +44,9 @@ export function navMenu() {
             homeMenuItem.addEventListener('click', function (event) {
                 event.stopPropagation();
                 clearTimeout(enterTimeout);
-                submenuWrapperExpertise.style.display = 'block';
+                submenuWrapper.style.display = 'block';
                 enterTimeout = setTimeout(() => {
-                    visibleElement('all 0.3s ease', submenuWrapperExpertise);
+                    visibleElement('all 0.3s ease', submenuWrapper);
                     homeMenuItem.classList.add('active');
                 }, 100);
             });
@@ -55,10 +55,10 @@ export function navMenu() {
         function openDropdownOnNavMenuItemHover() {
             homeMenuItem.addEventListener('mouseenter', function () {
                 clearTimeout(enterTimeout);
-                submenuWrapperExpertise.style.display = 'block';
+                submenuWrapper.style.display = 'block';
                 homeMenuItem.classList.add('active');
                 enterTimeout = setTimeout(() => {
-                    visibleElement('all 0.5s ease', submenuWrapperExpertise);
+                    visibleElement('all 0.5s ease', submenuWrapper);
                 }, 100);
             });
         }
@@ -66,13 +66,13 @@ export function navMenu() {
         function closeDropdownOnNavMenuItemHover() {
             homeMenuItem.addEventListener('mouseleave', function () {
                 clearTimeout(leaveTimeout);
-                submenuWrapperExpertise.style.transition = 'all 0.3s ease';
-                submenuWrapperExpertise.style.opacity = '0';
-                submenuWrapperExpertise.style.visibility = 'hidden';
-                submenuWrapperExpertise.style.zIndex = '-1';
+                submenuWrapper.style.transition = 'all 0.3s ease';
+                submenuWrapper.style.opacity = '0';
+                submenuWrapper.style.visibility = 'hidden';
+                submenuWrapper.style.zIndex = '-1';
                 homeMenuItem.classList.remove('active');
                 leaveTimeout = setTimeout(() => {
-                    submenuWrapperExpertise.style.display = 'none';
+                    submenuWrapper.style.display = 'none';
                 }, 100);
             });
         }
